@@ -1,0 +1,25 @@
+.numbered-input {
+    display: flex;
+    margin: 3rem 0;
+    font-size: 18pt;
+    .numbered-input__number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0.5rem;
+        border: 1px solid rgb(54, 148, 255);
+        background-color: aquamarine;
+        width: 2rem;
+        height: 2rem;
+    }
+    .numbered-input__name {
+        width: 100%;
+        font-size: inherit;
+        padding-left: 0.5rem;
+        background-color: aquamarine;
+        border: 1px solid rgb(54, 148, 255);
+        &:focus {
+            background-color: rgb(168, 255, 226);
+        }
+    }
+}

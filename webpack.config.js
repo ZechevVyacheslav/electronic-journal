@@ -24,18 +24,31 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      favicon: './src/logo.png'
     }),
     new MiniCssExtractPlugin({
       filename: 'css/main.css'
     })
   ],
   devServer: {
-    overlay: true
+    overlay: true,
+    historyApiFallback: true
   }
 };
