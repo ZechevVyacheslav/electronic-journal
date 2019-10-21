@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions/index';
+import * as actions from '../../actions/index';
 
-import '../styles/Students.less';
+import '../../styles/Students.less';
 
-import NumberedInput from '../containers/NumberedtInput';
-import Flash from '../containers/Flash';
+import NumberedInput from '../../containers/NumberedtInput';
+import Flash from '../../containers/Flash';
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-class Students extends Component {
+class AddStudents extends Component {
   state = {
     students: [{ number: 1, name: '' }],
     groupTitle: '',
@@ -128,4 +128,4 @@ const mapActionsToProps = {
 export default connect(
   null,
   mapActionsToProps
-)(Students);
+)(AddStudents);

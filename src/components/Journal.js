@@ -150,7 +150,7 @@ class Journal extends Component {
         <span>Even week</span>
         <div className="tooltip">
           {generateIcon(faQuestionCircle)}
-          <span class="tooltiptext">Click to change week</span>
+          <span className="tooltiptext">Click to change week</span>
         </div>
       </div>
     ) : (
@@ -158,7 +158,7 @@ class Journal extends Component {
         <span>Odd week</span>
         <div className="tooltip">
           {generateIcon(faQuestionCircle)}
-          <span class="tooltiptext">Click to change week</span>
+          <span className="tooltiptext">Click to change week</span>
         </div>
       </div>
     );

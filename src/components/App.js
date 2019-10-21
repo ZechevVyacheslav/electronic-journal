@@ -5,7 +5,7 @@ import * as actions from '../actions/index';
 import '../styles/App.less';
 
 import Header from './Header';
-import Students from './Students';
+import Students from './Students/AddStudents';
 import Subjects from './Subjects';
 import Journal from './Journal'
 
