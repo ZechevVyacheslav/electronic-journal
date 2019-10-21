@@ -37,7 +37,7 @@ class Header extends Component {
               >
                 <Link to="/create-student-list">{generateBlackIcon(faPlusCircle)} Create list</Link>
                 <a href="#">{generateBlackIcon(faEdit)} Edit list</a>
-                <a href="#">{generateBlackIcon(faEye)} View lists</a>
+                <Link to="/view-students">{generateBlackIcon(faEye)} View lists</Link>
               </Dropdown>
             </li>
             <li className="list__item">

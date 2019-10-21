@@ -28,3 +28,49 @@ hr {
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
 }
+
+.group-list {
+  margin-top: 3rem;
+  list-style: none;
+
+  padding: 0;
+  margin: auto;
+  font-size: 22px;
+  .group-list__item {
+    padding: 1rem;
+    margin: 0.3rem 0;
+    background-color: yellow;
+    border: 1px solid #3e8e41;
+    box-shadow: 1px 1px 3px 0 #3e8e41;
+    &:hover {
+      background-color: #3e8e41;
+      color: white;
+    }
+  }
+}
+
+.numbered-list {
+  display: flex;
+  margin: 3rem 0;
+  font-size: 18pt;
+  .numbered-list__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    border: 1px solid rgb(54, 148, 255);
+    background-color: aquamarine;
+    width: 2rem;
+    height: 2rem;
+  }
+  .numbered-list__name-control {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: inherit;
+    padding-left: 0.5rem;
+    background-color: aquamarine;
+    border: 1px solid rgb(54, 148, 255);
+  }
+}

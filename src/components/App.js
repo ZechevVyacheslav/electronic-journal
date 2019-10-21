@@ -5,7 +5,8 @@ import * as actions from '../actions/index';
 import '../styles/App.less';
 
 import Header from './Header';
-import Students from './Students/AddStudents';
+import AddStudents from './Students/AddStudents';
+import ViewStudents from './Students/VeiwStudents';
 import Subjects from './Subjects';
 import Journal from './Journal'
 
@@ -22,7 +23,10 @@ class App extends Component {
               <h1>Hello there!</h1>
             </Route>
             <Route path="/create-student-list" exact>
-              <Students />
+              <AddStudents />
+            </Route>
+            <Route path="/view-students" exact>
+              <ViewStudents />
             </Route>
             <Route path="/create-subjects" exact>
               <Subjects />
