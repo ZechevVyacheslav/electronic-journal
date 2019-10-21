@@ -10,10 +10,6 @@ import Subjects from './Subjects';
 import Journal from './Journal'
 
 class App extends Component {
-  buttonHandler = () => {
-    const { addRandomNumber } = this.props;
-    addRandomNumber();
-  };
 
   render() {
     const { numbers } = this.props;
@@ -41,17 +37,6 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    numbers: state.numbers
-  };
-};
 
-const mapDispatchToProps = {
-  addRandomNumber: actions.addRandomNumber
-};
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default App;

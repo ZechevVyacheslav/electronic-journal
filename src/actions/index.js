@@ -1,10 +1,11 @@
-export const ADD_RANDOM_NUMBER = 'ADD_RANDOM_NUMBER';
+export const ADD_GROUP = 'ADD_GROUP';
 
-export const addRandomNumber = () => {
+export const addGroup = (groupTitle, studentsList) => {
     return {
-        type: ADD_RANDOM_NUMBER,
+        type: ADD_GROUP,
         payload: {
-            num: Math.floor(Math.random() * 10)
+            groupTitle,
+            studentsList
         }
     }
 }

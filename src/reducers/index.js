@@ -1,15 +1,18 @@
 import * as actions from '../actions/index';
 
 const initialState = {
-  numbers: [1, 2, 3]
+  groups: []
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case actions.ADD_RANDOM_NUMBER:
+    case actions.ADD_GROUP:
+      const { groups } = state;
+      const { groupTitle, studentsList } = action.payload;
+      const updatedGroups = [...groups, {groupTitle, studentsList}]
       return {
         ...state,
-        numbers: [...state.numbers, action.payload.num]
+        groups: updatedGroups
       };
     default:
       return state;
