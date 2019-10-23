@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/index';
+import uuid from 'uuid/v4';
 
 import '../../styles/Students.less';
 
@@ -13,6 +14,7 @@ class AddStudents extends Component {
   state = {
     students: [{ number: 1, name: '' }],
     groupTitle: '',
+    id: uuid(),
     showMessage: false
   };
 
@@ -70,6 +72,7 @@ class AddStudents extends Component {
   handleMessageAppearance = () => {
     this.setState(
       {
+        id: uuid(),
         students: [{ number: 1, name: '' }],
         groupTitle: '',
         showMessage: !this.state.showMessage
@@ -92,9 +95,9 @@ class AddStudents extends Component {
   };
 
   handleGroupAdding = () => {
-    const { groupTitle, students } = this.state;
+    const { id, groupTitle, students } = this.state;
     const { addGroup } = this.props;
-    addGroup(groupTitle, students);
+    addGroup(id, groupTitle, students);
     this.handleMessageAppearance();
   };
 
@@ -126,9 +129,6 @@ class AddStudents extends Component {
         </div>
         <hr />
         {studentsList}
-        {/* <button className="btn" onClick={this.addingButtonHandler}>
-          Add 1 more student
-        </button> */}
         <Flash show={this.state.showMessage}></Flash>
         <button className="btn" onClick={this.handleGroupAdding}>
           Finish entering
