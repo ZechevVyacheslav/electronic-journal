@@ -39,6 +39,22 @@ class AddStudents extends Component {
     }
   };
 
+  handleStudentRemoving = id => () => {
+    const { students } = this.state;
+    if (students.length < 2) {
+      return;
+    }
+    const filteredStudents = students.filter(student => student.number !== id);
+    const updatedStudents = filteredStudents.reduce(
+      (acc, student) =>
+        student.number > id
+          ? [...acc, { ...student, number: student.number - 1 }]
+          : [...acc, { ...student }],
+      []
+    );
+    this.setState({ students: updatedStudents });
+  };
+
   handleStudentNameChange = id => e => {
     const { students } = this.state;
     const updatedStudents = students.reduce(
@@ -89,9 +105,10 @@ class AddStudents extends Component {
           key={student.number}
           number={student.number}
           name={student.name}
-          placeholder="Hit enter to add new input field"
+          placeholder="Hit enter to add new input field and click on number to remove field"
           adding={this.handleStudentAdding}
           editing={this.handleStudentNameChange(student.number)}
+          removing={this.handleStudentRemoving(student.number)}
         />
       );
     });

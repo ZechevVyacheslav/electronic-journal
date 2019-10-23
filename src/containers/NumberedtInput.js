@@ -4,7 +4,7 @@ import '../styles/NumberedInput.less';
 const numberedInput = props => {
   return (
     <div className="numbered-input">
-      <span className="numbered-input__number">{props.number}</span>
+      <span className="numbered-input__number" onClick={props.removing}>{props.number}</span>
       <div className="numbered-input__roundedSide"></div>
       <input
         className="numbered-input__name"

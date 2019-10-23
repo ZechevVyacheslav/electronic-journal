@@ -42,7 +42,7 @@ class VeiwStudents extends Component {
     const groupsList = (
       <>
         <h1>List of groups:</h1>
-        {groupTitles.length > 0 ? titles : <h1>Nothing to show =(</h1>}
+        {groupTitles.length > 0 ? titles : <h1>Nothing to edit =(</h1>}
       </>
     );
     return this.state.showGroupsList ? (

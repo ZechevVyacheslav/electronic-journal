@@ -6,6 +6,7 @@ import '../styles/App.less';
 
 import Header from './Header';
 import AddStudents from './Students/AddStudents';
+import EditStudents from './Students/EditStudents';
 import ViewStudents from './Students/VeiwStudents';
 import Subjects from './Subjects';
 import Journal from './Journal'
@@ -24,6 +25,9 @@ class App extends Component {
             </Route>
             <Route path="/create-student-list" exact>
               <AddStudents />
+            </Route>
+            <Route path="/edit-students" exact>
+              <EditStudents />
             </Route>
             <Route path="/view-students" exact>
               <ViewStudents />
