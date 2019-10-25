@@ -1,31 +1,36 @@
 import * as actions from '../actions/index';
+import { combineReducers } from 'redux';
 
-const initialState = {
-  groups: []
-};
+// const initialState = {
+//   groups: [],
+//   subjects: []
+// };
 
-const reducer = (state = initialState, action) => {
+const groups = (state = [], action) => {
   switch (action.type) {
     case actions.ADD_GROUP:
-      const { groups } = state;
       const { id, groupTitle, studentsList } = action.payload;
-      const updatedGroups = [...groups, { id, groupTitle, studentsList }];
-      return {
-        ...state,
-        groups: updatedGroups
-      };
+      return [...state, { id, groupTitle, studentsList }];
     case actions.EDIT_GROUP:
-      return {
-        ...state,
-        groups: state.groups.map(group =>
+      return [
+        ...state.map(group =>
           group.id === action.payload.updatedGroup.id
             ? { ...action.payload.updatedGroup }
             : { ...group }
         )
-      };
+      ];
     default:
       return state;
   }
 };
 
-export default reducer;
+const subjects = (state = [], action) => {
+  switch (action.type) {
+    case actions.ADD_SUBJECTS:
+      return [...state, ...action.payload.subjects];
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({ groups, subjects });
