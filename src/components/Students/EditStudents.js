@@ -154,7 +154,7 @@ class VeiwStudents extends Component {
     );
     const groupsList = (
       <>
-        <h1>List of groups:</h1>
+        <h1>Edit mode</h1>
         <Flash show={this.state.showMessage}></Flash>
         {groupTitles.length > 0 ? titles : <h1>Nothing to edit =(</h1>}
       </>
@@ -163,7 +163,7 @@ class VeiwStudents extends Component {
       groupsList
     ) : (
       <>
-        <h1 className="content_title">Start editing students:</h1>
+        <h1 className="content_title">Start editing list:</h1>
         <div className="group-input">
           <label htmlFor="group-title">Group title: </label>
           <input

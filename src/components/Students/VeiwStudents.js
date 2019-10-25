@@ -41,7 +41,7 @@ class VeiwStudents extends Component {
     );
     const groupsList = (
       <>
-        <h1>List of groups:</h1>
+        <h1>View mode</h1>
         {groupTitles.length > 0 ? titles : <h1>Nothing to show =(</h1>}
       </>
     );

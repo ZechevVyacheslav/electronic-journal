@@ -108,7 +108,7 @@ class AddStudents extends Component {
           key={student.number}
           number={student.number}
           name={student.name}
-          placeholder="Hit enter to add new input field and click on number to remove field"
+          placeholder="Hit enter to add new input field or click on number to remove field"
           adding={this.handleStudentAdding}
           editing={this.handleStudentNameChange(student.number)}
           removing={this.handleStudentRemoving(student.number)}

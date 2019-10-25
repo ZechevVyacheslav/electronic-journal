@@ -8,7 +8,7 @@ import Header from './Header';
 import AddStudents from './Students/AddStudents';
 import EditStudents from './Students/EditStudents';
 import ViewStudents from './Students/VeiwStudents';
-import Subjects from './Subjects';
+import AddSubjects from './Subjects/AddSubjects';
 import Journal from './Journal'
 
 class App extends Component {
@@ -33,7 +33,7 @@ class App extends Component {
               <ViewStudents />
             </Route>
             <Route path="/create-subjects" exact>
-              <Subjects />
+              <AddSubjects />
             </Route>
             <Route path="/create-journal" exact>
               <Journal />

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions/index';
+import * as actions from '../../actions/index';
 
-import NumberedInput from '../containers/NumberedtInput';
-import '../styles/Subjects.less'
+import NumberedInput from '../../containers/NumberedtInput';
+import '../../styles/Subjects.less';
 
-class Subjects extends Component {
+const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+class AddSubjects extends Component {
   state = {
     subjects: [{ number: 1, name: '' }]
   };
@@ -18,7 +20,13 @@ class Subjects extends Component {
         ...this.state.subjects,
         { number: lastSubject.number + 1, name: '' }
       ];
-      this.setState({ subjects: updatedSubjects });
+      this.setState({ subjects: updatedSubjects }, () => {
+        wait(1).then(() => {
+          const subjects = document.querySelectorAll('.numbered-input__name');
+          const newSubject = subjects[subjects.length - 1];
+          newSubject.focus();
+        });
+      });
     }
   };
 
@@ -58,4 +66,4 @@ class Subjects extends Component {
   }
 }
 
-export default Subjects;
+export default AddSubjects;
