@@ -5,12 +5,15 @@ import * as actions from '../actions/index';
 import '../styles/App.less';
 
 import Header from './Header';
+
 import AddStudents from './Students/AddStudents';
 import EditStudents from './Students/EditStudents';
 import ViewStudents from './Students/VeiwStudents';
+
 import AddSubjects from './Subjects/AddSubjects';
 import EditSubjects from './Subjects/EditSubjects';
-import Journal from './Journal'
+
+import AddJournal from './Journal/AddJournal'
 
 class App extends Component {
 
@@ -40,7 +43,7 @@ class App extends Component {
               <EditSubjects />
             </Route>
             <Route path="/create-journal" exact>
-              <Journal />
+              <AddJournal />
             </Route>
           </Switch>
         </main>

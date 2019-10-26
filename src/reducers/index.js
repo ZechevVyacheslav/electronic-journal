@@ -1,11 +1,6 @@
 import * as actions from '../actions/index';
 import { combineReducers } from 'redux';
 
-// const initialState = {
-//   groups: [],
-//   subjects: []
-// };
-
 const groups = (state = [], action) => {
   switch (action.type) {
     case actions.ADD_GROUP:
@@ -35,4 +30,23 @@ const subjects = (state = [], action) => {
   }
 };
 
-export default combineReducers({ groups, subjects });
+const journal = (state = [], action) => {
+  switch (action.type) {
+    case actions.ADD_JOURNAL:
+      return [
+        ...state,
+        {
+          info: {
+            groupTitle: action.payload.groupTitle,
+            semester: action.payload.semester,
+            year: action.payload.year
+          },
+          timetable: action.payload.timetable
+        }
+      ];
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({ groups, subjects, journal });

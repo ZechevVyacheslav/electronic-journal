@@ -2,6 +2,7 @@ export const ADD_GROUP = 'ADD_GROUP';
 export const EDIT_GROUP = 'EDIT_GROUP';
 export const ADD_SUBJECTS = 'ADD_SUBJECTS';
 export const EDIT_SUBJECTS = 'EDIT_SUBJECTS';
+export const ADD_JOURNAL = 'ADD_JOURNAL';
 
 export const addGroup = (id, groupTitle, studentsList) => {
   return {
@@ -33,10 +34,22 @@ export const addSubjects = subjects => {
 };
 
 export const editSubjects = subjects => {
-    return {
-        type: EDIT_SUBJECTS,
-        payload: {
-            subjects
-        }
+  return {
+    type: EDIT_SUBJECTS,
+    payload: {
+      subjects
     }
-}
+  };
+};
+
+export const addJournal = (groupTitle, semester, year, timetable) => {
+  return {
+    type: ADD_JOURNAL,
+    payload: {
+      groupTitle,
+      semester,
+      year,
+      timetable
+    }
+  };
+};
