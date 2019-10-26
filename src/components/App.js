@@ -22,7 +22,7 @@ class App extends Component {
         <main className="main-content">
           <Switch>
             <Route path="/" exact>
-              <h1>Hello there!</h1>
+              <h1 className="centered">Hello there! Welcome to electronic journal starting page <span role="img">🙂</span></h1>
             </Route>
             <Route path="/create-student-list" exact>
               <AddStudents />
