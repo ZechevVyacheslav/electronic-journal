@@ -88,8 +88,6 @@ class AddSubjects extends Component {
   handleSubjectsAdding = () => {
     const { subjects } = this.state;
     const subjectsWithoutNumber = subjects.map(subject => ({id: subject.id, title: subject.title}));
-    console.log(subjects);
-    console.log(subjectsWithoutNumber);
     const { addSubjects } = this.props;
     addSubjects(subjectsWithoutNumber);
     this.handleMessageAppearance();

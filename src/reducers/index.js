@@ -28,6 +28,8 @@ const subjects = (state = [], action) => {
   switch (action.type) {
     case actions.ADD_SUBJECTS:
       return [...state, ...action.payload.subjects];
+    case actions.EDIT_SUBJECTS:
+      return [...action.payload.subjects];
     default:
       return state;
   }
