@@ -80,7 +80,7 @@ class EditSubjects extends Component {
 
   render() {
     if (this.state.subjects.length < 1) {
-      return <h1>Nothith to edit =( </h1>;
+      return <h1>Nothith to edit <span role="img">😔</span></h1>;
     }
     return (
       <>

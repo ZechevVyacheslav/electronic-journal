@@ -156,7 +156,7 @@ class VeiwStudents extends Component {
       <>
         <h1>Edit mode</h1>
         <Flash show={this.state.showMessage}></Flash>
-        {groupTitles.length > 0 ? titles : <h1>Nothing to edit =(</h1>}
+        {groupTitles.length > 0 ? titles : <h1>Nothing to edit <span role="img">😔</span></h1>}
       </>
     );
     return this.state.showGroupsList ? (
