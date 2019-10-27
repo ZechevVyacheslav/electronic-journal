@@ -44,6 +44,14 @@ const journal = (state = [], action) => {
           timetable: action.payload.timetable
         }
       ];
+    case actions.EDIT_JOURNAL:
+      const withoutEditedJournal = state.filter(
+        ({ info }) =>
+          info.groupTitle === action.payload.journal.info.groupTitle &&
+          info.semester === action.payload.journal.info.semester &&
+          info.year === action.payload.journal.info.year
+      );
+      return [...withoutEditedJournal, action.payload.journal];
     default:
       return state;
   }

@@ -14,6 +14,7 @@ import AddSubjects from './Subjects/AddSubjects';
 import EditSubjects from './Subjects/EditSubjects';
 
 import AddJournal from './Journal/AddJournal'
+import EditJournal from './Journal/EditJournal'
 
 class App extends Component {
 
@@ -44,6 +45,9 @@ class App extends Component {
             </Route>
             <Route path="/create-journal" exact>
               <AddJournal />
+            </Route>
+            <Route path="/edit-journal" exact>
+              <EditJournal />
             </Route>
           </Switch>
         </main>

@@ -51,7 +51,7 @@ class Header extends Component {
             <li className="list__item">
               <Dropdown title="Journal" icon={generateBlackIcon(faListUl)}>
                 <Link to="/create-journal">{generateBlackIcon(faPlusCircle)} Create journal</Link>
-                <a href="#">{generateBlackIcon(faEdit)} Edit journal</a>
+                <Link to="/edit-journal">{generateBlackIcon(faEdit)} Edit journal</Link>
                 <a href="#">{generateBlackIcon(faEye)} View journals</a>
               </Dropdown>
             </li>
