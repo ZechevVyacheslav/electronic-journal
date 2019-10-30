@@ -1,0 +1,30 @@
+.flash-control {
+    position: fixed;
+    top: 0;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    display: flex;
+    width: 13rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    background: rgb(5, 211, 5);
+    color: white;
+    border: 1px solid rgb(74, 179, 74);
+    box-shadow: 0 0 3px 2px rgb(74, 179, 74);
+
+    opacity: 0;
+    transition: opacity 2s;
+
+    .flash-control__title {
+        margin-left: 1rem;
+    }
+
+    &.visible {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,214 @@
+.journal-input {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .journal-input__element {
+    margin: 0 1rem;
+    label,
+    input {
+      font-size: 18px;
+    }
+    input {
+      width: 5.2rem;
+    }
+  }
+}
+
+.journal-control {
+  margin-top: 3rem;
+  .journal-week-control {
+    background-color: #f0f0f0;
+    margin-top: 1rem;
+    padding: 0 1rem;
+    padding-top: 5px;
+    padding-bottom: 0.2rem;
+    border-radius: 20px;
+  }
+}
+
+.btn {
+  outline: none;
+  height: 2.2rem;
+  width: 10rem;
+  margin: 0 1rem;
+  background-color: rgb(5, 194, 5);
+  border-color: rgb(5, 194, 5);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 2rem 0;
+  &:hover {
+    background-color: rgb(110, 255, 110);
+    border-color: rgb(110, 255, 110);
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  .tooltiptext {
+    font-size: 18px;
+    visibility: hidden;
+    width: 160px;
+    background-color: #c0c0c0;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  &:hover .tooltiptext {
+    visibility: visible;
+  }
+}
+
+.even-week,
+.odd-week {
+  cursor: pointer;
+  width: fit-content;
+  margin: auto;
+}
+
+.even-week {
+  color: #0066cc;
+}
+
+.odd-week {
+  color: #009933;
+}
+
+.titles-list {
+  margin-top: 3rem;
+  list-style: none;
+
+  padding: 0;
+  margin: auto;
+  font-size: 22px;
+  .titles-list__item {
+    padding: 1rem;
+    margin: 0.3rem 0;
+    background-color: yellow;
+    border: 1px solid #3e8e41;
+    box-shadow: 1px 1px 3px 0 #3e8e41;
+    &:hover {
+      background-color: #3e8e41;
+      color: white;
+    }
+  }
+}
+
+.btn-contol {
+  margin: 2rem 0;
+  .btn {
+    margin: 0 1rem;
+  }
+}
+
+.wrapper {
+  min-width: 2100px;
+  margin-bottom: 10rem;
+}
+
+.journal-view {
+  display: grid;
+  width: fit-content;
+  font-size: 30px;
+  grid-template-areas:
+    'students dayTitle dayTitle dayTitle dayTitle dayTitle'
+    'students lessonTitle lessonTitle lessonTitle lessonTitle lessonTitle';
+  grid-template-columns: 300px repeat(5, 350px);
+  grid-template-rows: 100px 50px;
+  align-items: center;
+
+  .journal-control__column-title {
+    grid-area: students;
+    height: calc(100% + 1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin-left: -1px;
+    margin-bottom: -1px;
+  }
+
+  .journal-control__days-columns {
+    grid-area: dayTitle;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 100%;
+    .days-columns__day {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+      margin-left: -1px;
+      margin-bottom: -1px;
+    }
+  }
+
+  .journal-control__lessons-columns {
+    grid-area: lessonTitle;
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 100%;
+    .lessons-columns__lessons-group {
+      display: grid;
+      height: 100%;
+      grid-template-columns: repeat(4, 1fr);
+      .lessons-group__lesson {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+        margin-left: -1px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+}
+
+.journal-students {
+  display: grid;
+  width: fit-content;
+  font-size: 30px;
+  grid-template-areas: 'student lessons lessons lessons lessons lessons';
+  grid-template-columns: 300px repeat(5, 350px);
+  grid-template-rows: 50px;
+  align-items: center;
+  .journal-control__column-title {
+    grid-area: student;
+    height: calc(100% + 1px);
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0.5rem;
+    border: 1px solid black;
+    margin-left: -1px;
+    margin-bottom: -1px;
+  }
+  .journal-students__lessons-group {
+    grid-area: lessons;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    .lessons-group__lesson {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      .lesson__attendance {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+        margin-left: -1px;
+        margin-bottom: -1px;
+      }
+    }
+  }
+}

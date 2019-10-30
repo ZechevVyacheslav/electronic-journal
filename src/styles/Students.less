@@ -1,0 +1,87 @@
+.group-input {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  label,
+  input {
+    font-size: 18px;
+    margin: 0.2rem;
+  }
+  input {
+    width: 5.2rem;
+  }
+}
+
+hr {
+  border: 1px solid black;
+  margin: 2rem 0;
+}
+
+.btn {
+  outline: none;
+  height: 2.2rem;
+  width: 10rem;
+  margin: 0 1rem;
+  background-color: rgb(5, 194, 5);
+  border-color: rgb(5, 194, 5);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  &:hover {
+    background-color: rgb(110, 255, 110);
+    border-color: rgb(110, 255, 110);
+  }
+}
+
+.btn-contol {
+  margin: 2rem 0;
+  .btn {
+    margin: 0 1rem;
+  }
+}
+
+.group-list {
+  margin-top: 3rem;
+  list-style: none;
+
+  padding: 0;
+  margin: auto;
+  font-size: 22px;
+  .group-list__item {
+    padding: 1rem;
+    margin: 0.3rem 0;
+    background-color: yellow;
+    border: 1px solid #3e8e41;
+    box-shadow: 1px 1px 3px 0 #3e8e41;
+    &:hover {
+      background-color: #3e8e41;
+      color: white;
+    }
+  }
+}
+
+.numbered-list {
+  display: flex;
+  margin: 3rem 0;
+  font-size: 18pt;
+  .numbered-list__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    border: 1px solid rgb(54, 148, 255);
+    background-color: aquamarine;
+    width: 2rem;
+    height: 2rem;
+  }
+  .numbered-list__name-control {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: inherit;
+    padding-left: 0.5rem;
+    background-color: aquamarine;
+    border: 1px solid rgb(54, 148, 255);
+  }
+}
