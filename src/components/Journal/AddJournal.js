@@ -210,7 +210,7 @@ class AddJournal extends Component {
             <input
               type="text"
               id="year"
-              placeholder="YYYY"
+              placeholder="20**"
               onChange={this.handleYearChange}
               value={this.state.year}
             ></input>

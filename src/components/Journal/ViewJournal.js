@@ -87,7 +87,7 @@ class ViewJournal extends Component {
     const currentStudents =
       currentGroup.length > 0 ? currentGroup[0].studentsList : [];
 
-    let students = null;
+    let students = <h1>Group not found or week is not selected</h1>;
 
     if (currentStudents.length > 0 && this.state.currentWeek != 0) {
       const { currentWeek } = this.state;
