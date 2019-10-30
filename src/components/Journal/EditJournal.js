@@ -77,6 +77,7 @@ class EditJournal extends Component {
 
   handleLessonTitleChange = (day, week, id) => (_, newValue) => {
     const { timetable } = this.state.currentJournal;
+    const { currentJournal } = this.state;
     const lessons = timetable[day][week];
     const updatedLessons = lessons.map(lesson => {
       return lesson.id === id ? { ...lesson, title: newValue } : lesson;
@@ -88,7 +89,7 @@ class EditJournal extends Component {
     const updatedDay = { ...this.state[day], [week]: updatedLessons };
     this.setState({
       currentJournal: {
-        ...this.state.currentJournal,
+        ...currentJournal,
         timetable: updatedTimetable
       }
     });
@@ -128,7 +129,7 @@ class EditJournal extends Component {
   handleChangesSave = () => {
     const { currentJournal } = this.state;
     const { editJournal } = this.props;
-    editJournal(currentJournal);
+    editJournal(currentJournal.info.id, currentJournal);
     this.handleMessageAppearance();
   };
 
@@ -295,7 +296,7 @@ class EditJournal extends Component {
 }
 
 const mapStateToProps = state => {
-  const { journal: journals, groups, subjects } = state;
+  const { journals, groups, subjects } = state;
   const props = {
     journals,
     groups,

@@ -9,6 +9,31 @@ import Flash from '../../containers/Flash';
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+const generateAttendanceForSemester = () => {
+  const generateAttendanceForWeek = () => {
+    const generateAttendanceForDay = () => {
+      const lessonsNumbers = [1, 2, 3, 4];
+      return lessonsNumbers.map(lessonNumber => ({
+        lessonNumber,
+        wasAbsentOnFirstHalfPair: false,
+        wasAbsentOnSecondHalfPair: false
+      }));
+    };
+
+    const daysTitles = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    return daysTitles.map(dayTitle => ({
+      dayTitle,
+      dayAttendance: generateAttendanceForDay()
+    }));
+  };
+
+  const weeksNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  return weeksNumbers.map(weekNumber => ({
+    weekNumber,
+    weekAttendance: generateAttendanceForWeek()
+  }));
+};
+
 class VeiwStudents extends Component {
   state = {
     showGroupsList: true,
@@ -40,7 +65,7 @@ class VeiwStudents extends Component {
       const [lastStudent] = students.slice(-1);
       const updatedStudents = [
         ...this.state.currentGroup.studentsList,
-        { number: lastStudent.number + 1, name: '' }
+        { number: lastStudent.number + 1, name: '', attendance: generateAttendanceForSemester() }
       ];
 
       this.setState(
@@ -156,7 +181,13 @@ class VeiwStudents extends Component {
       <>
         <h1>Edit mode</h1>
         <Flash show={this.state.showMessage}></Flash>
-        {groupTitles.length > 0 ? titles : <h1>Nothing to edit <span role="img">😔</span></h1>}
+        {groupTitles.length > 0 ? (
+          titles
+        ) : (
+          <h1>
+            Nothing to edit <span role="img">😔</span>
+          </h1>
+        )}
       </>
     );
     return this.state.showGroupsList ? (

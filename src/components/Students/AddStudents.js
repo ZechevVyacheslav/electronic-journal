@@ -10,9 +10,36 @@ import Flash from '../../containers/Flash';
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+const generateAttendanceForSemester = () => {
+  const generateAttendanceForWeek = () => {
+    const generateAttendanceForDay = () => {
+      const lessonsNumbers = [1, 2, 3, 4];
+      return lessonsNumbers.map(lessonNumber => ({
+        lessonNumber,
+        wasAbsentOnFirstHalfPair: false,
+        wasAbsentOnSecondHalfPair: false
+      }));
+    };
+
+    const daysTitles = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    return daysTitles.map(dayTitle => ({
+      dayTitle,
+      dayAttendance: generateAttendanceForDay()
+    }));
+  };
+
+  const weeksNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+  return weeksNumbers.map(weekNumber => ({
+    weekNumber,
+    weekAttendance: generateAttendanceForWeek()
+  }));
+};
+
 class AddStudents extends Component {
   state = {
-    students: [{ number: 1, name: '' }],
+    students: [
+      { number: 1, name: '', attendance: generateAttendanceForSemester() }
+    ],
     groupTitle: '',
     id: uuid(),
     showMessage: false
@@ -29,7 +56,11 @@ class AddStudents extends Component {
       const [lastStudent] = students.slice(-1);
       const updatedStudents = [
         ...this.state.students,
-        { number: lastStudent.number + 1, name: '' }
+        {
+          number: lastStudent.number + 1,
+          name: '',
+          attendance: generateAttendanceForSemester()
+        }
       ];
       this.setState({ students: updatedStudents }, () => {
         wait(1).then(() => {
@@ -73,7 +104,9 @@ class AddStudents extends Component {
     this.setState(
       {
         id: uuid(),
-        students: [{ number: 1, name: '' }],
+        students: [
+          { number: 1, name: '', attendance: generateAttendanceForSemester() }
+        ],
         groupTitle: '',
         showMessage: !this.state.showMessage
       },

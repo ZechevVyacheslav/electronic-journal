@@ -34,6 +34,7 @@ class AddJournal extends Component {
     weekIsEven: true,
     weekIsOdd: false,
     days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    id: uuid(),
     monday: generateDayFields(),
     tuesday: generateDayFields(),
     wednesday: generateDayFields(),
@@ -77,6 +78,7 @@ class AddJournal extends Component {
         groupTitle: '',
         semester: '',
         year: '',
+        id: uuid(),
         monday: generateDayFields(),
         tuesday: generateDayFields(),
         wednesday: generateDayFields(),
@@ -105,9 +107,9 @@ class AddJournal extends Component {
   handleJournalAdding = () => {
     const { monday, tuesday, wednesday, thursday, friday } = this.state;
     const timetable = { monday, tuesday, wednesday, thursday, friday };
-    const { groupTitle, semester, year } = this.state;
+    const { id, groupTitle, semester, year } = this.state;
     const { addJournal } = this.props;
-    addJournal(groupTitle, semester, year, timetable);
+    addJournal(id, groupTitle, semester, year, timetable);
     this.handleMessageAppearance()
   };
 

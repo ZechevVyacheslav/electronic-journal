@@ -4,6 +4,7 @@ export const ADD_SUBJECTS = 'ADD_SUBJECTS';
 export const EDIT_SUBJECTS = 'EDIT_SUBJECTS';
 export const ADD_JOURNAL = 'ADD_JOURNAL';
 export const EDIT_JOURNAL = 'EDIT_JOURNAL';
+export const TOGGLE_STUDENTS_ATTENDANCE = 'TOGGLE_STUDENTS_ATTENDANCE';
 
 export const addGroup = (id, groupTitle, studentsList) => {
   return {
@@ -43,10 +44,11 @@ export const editSubjects = subjects => {
   };
 };
 
-export const addJournal = (groupTitle, semester, year, timetable) => {
+export const addJournal = (id, groupTitle, semester, year, timetable) => {
   return {
     type: ADD_JOURNAL,
     payload: {
+      id,
       groupTitle,
       semester,
       year,
@@ -55,11 +57,33 @@ export const addJournal = (groupTitle, semester, year, timetable) => {
   };
 };
 
-export const editJournal = journal => {
+export const editJournal = (id, journal) => {
   return {
     type: EDIT_JOURNAL,
     payload: {
+      id,
       journal
     }
-  }
-}
+  };
+};
+
+export const toggleStudentsAttendance = (
+  groupTitle,
+  number,
+  weekNumber,
+  dayTitle,
+  lessonNumber,
+  halfPair
+) => {
+  return {
+    type: TOGGLE_STUDENTS_ATTENDANCE,
+    payload: {
+      groupTitle,
+      number,
+      weekNumber,
+      dayTitle,
+      lessonNumber,
+      halfPair
+    }
+  };
+};
